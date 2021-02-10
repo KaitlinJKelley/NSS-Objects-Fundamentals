@@ -163,4 +163,22 @@ for (const song of firstSet.song) {
 // Using only properties of the event object we've previously defined
 // TODO: Insert the bandVenueDate string into the innerHTML of the element with the id of "header" in index.html
 
+const venueContentTarget = document.querySelector("#header")
+console.log('event: ', event);
+
+venueContentTarget.innerHTML += `${event.artist.name} - ${event.venue.name} - ${event.eventDate}`
+
 // TODO: Iterate the first set of songs for that event, create a list element for each song with the song's title and insert that new list element into the innerHTML of the element with the id of "setlist" in index.html
+
+const setlistContentTarget = document.querySelector("#setlist")
+
+let listTag = ""
+for (const song of firstSet.song) {
+    listTag += `<li>${song.name}</li>`
+}
+
+setlistContentTarget.innerHTML = `
+    <ul>
+        ${listTag}
+    </ul>
+    `
