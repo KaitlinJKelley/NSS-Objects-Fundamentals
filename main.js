@@ -147,12 +147,15 @@ console.log(bandVenueDate)
 // TODO: Find the first set of songs of the 'event' object and store it in a variable named 'firstSet'
 
 const firstSet = event.sets.set.find(group => group === event.sets.set[0])
+console.log('firstSet: ', firstSet);
 
 
 
 // TODO: USING ANY OF THE WAYS TO LOOP AND ACCESS OBJECT PROPERTIES - iterate the 'firstSet' array and log the name of each song to the console
 
-
+for (const song of firstSet.song) {
+    console.log(`${song.name}`)
+}
 
 // ! ADD AND COMMIT
 
